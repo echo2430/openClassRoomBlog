@@ -1,0 +1,15 @@
+<li [ngClass]="{'list-group-item': true,
+      'list-group-item-success' : isLoved(),
+    'list-group-item-danger': isNotLoved()}">
+  <span class="float-right">{{post.created_at | date: short}}</span>
+  <h4 [ngStyle]="{color:getColor()}">Appareil : {{ post.title }}</h4>
+  <p>{{post.content}}</p>
+  <button style="background-color:green;color:white"
+          (click)="likeIt()">
+    Love it
+  </button>
+  <button style="background-color:red;color:white"
+          (click)="hateIt()">
+    Don't love it
+  </button>
+</li>
